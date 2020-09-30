@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect, Fragment } from 'react';
+import { Switch, Route, withRouter, BrowserRouter } from 'react-router-dom';
+import PhoneAuth from './components/Auth.js/PhoneAuth';
+import PhoneVerify from './components/Auth.js/PhoneVerify';
+import Home from './components/Auth.js/Home';
+import SingleRestaurant from './components/Auth.js/SingleRestaurant';
+import PrivateRoute from './components/Auth.js/PrivateRoute';
 import './App.css';
+// Redux
+import { Provider } from 'react-redux';
+import store from './store';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/signup' component={PhoneAuth} />
+          <Route exact path='/signin' component={PhoneVerify} />
+          <PrivateRoute exact path='/' component={Home} />
+          <Route exact path='/restaurant/:id' component={SingleRestaurant} />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
   );
-}
+};
 
 export default App;

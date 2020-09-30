@@ -1,38 +1,253 @@
-.App {
-  text-align: center;
+a {
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html {
+  font-size: 62.5%;
+}
+
+.rest-cont {
+  margin: 4rem auto;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+}
+
+@media (max-width: 610px) {
+  .rest-cont {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.image {
+  height: 200px;
+  width: 200px;
   display: flex;
-  flex-direction: column;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.details {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 610px) {
+  .details {
+    margin: 0;
+    margin-top: 1rem;
+  }
+}
+
+.details .loc {
+  font-size: 1.3rem;
+}
+
+.details .rating {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.container1 {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  background-color: #ff7300;
+}
+
+.container1 .form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: #d6d5d5;
+}
+
+.container1 .form h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.container1 .form i {
+  text-align: center;
+  font-size: 8rem;
+  margin-bottom: 1rem;
+}
+
+.container1 .form .inp {
+  display: flex;
+}
+
+.container1 .form .inp input {
+  height: 3.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.container1 .form input[type='submit'] {
+  font-size: 1.5rem;
+  height: 3rem;
+  width: max-content;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  height: 5.5rem;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: #00334e;
+}
+
+.nav .nav-cont {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  height: 5.5rem;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.nav .brand {
+  font-size: 2.8rem;
+  color: white;
+  list-style-type: none;
+}
+
+.nav .brand a {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav .right-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  font-size: 3rem;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav .right-nav li {
+  height: 100%;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.nav .right-nav li a {
+  color: white;
+  display: flex;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav span,
+a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.sidenav span i,
+a i {
+  cursor: pointer;
+}
+
+.sidenav span:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
-  to {
-    transform: rotate(360deg);
+  .sidenav a {
+    font-size: 18px;
   }
 }
+
+#overlay {
+  width: 0;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: rgba(77, 75, 75, 0.24);
+  overflow-x: hidden;
+}
+
+.lolo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/*# sourceMappingURL=App.css.map */
